@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Select Plan</title>
+    <link
+      rel="icon"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="css/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+    />
+    <link
+      rel="stylesheet"
+      href="css/select-plan.css"
+    />
+  </head>
+  <body>
+    <main>
+      <aside class="side-bar">
+        <div class="side-bar-item-container">
+          <p class="step-num">1</p>
+          <div class="step">
+            <p>STEP 1</p>
+            <span>YOUR INFO</span>
+          </div>
+        </div>
+        <div class="side-bar-item-container">
+          <p class="step-num step-active">2</p>
+          <div class="step">
+            <p>STEP 2</p>
+            <span>SELECT PLAN</span>
+          </div>
+        </div>
+        <div class="side-bar-item-container">
+          <p class="step-num">3</p>
+          <div class="step">
+            <p>STEP 3</p>
+            <span>ADDS-ONS</span>
+          </div>
+        </div>
+        <div class="side-bar-item-container">
+          <p class="step-num">4</p>
+          <div class="step">
+            <p>STEP 4</p>
+            <span>SUMMARY</span>
+          </div>
+        </div>
+      </aside>
+      <div class="section-container">
+        <div class="section-item-container">
+          <section class="header-container">
+            <h1>Select your plan</h1>
+            <p>You have the option of monthly or yearly billing.</p>
+          </section>
+          <section class="main-container">
+            <div class="plan-container plan-focus">
+              <img
+                src="images/icon-arcade.svg"
+                alt="icon-arcade"
+              />
+              <div class="plan-txt-container">
+                <p class="plan-name">Arcade</p>
+                <span id="arcade-price">$9/mo</span>
+                <p class="month-free">2 month free</p>
+              </div>
+            </div>
+            <div class="plan-container">
+              <img
+                src="images/icon-advanced.svg"
+                alt="icon-advanced"
+              />
+              <div class="plan-txt-container">
+                <p class="plan-name">Advanced</p>
+                <span id="advance-price">$12/mo</span>
+                <p class="month-free">2 month free</p>
+              </div>
+            </div>
+            <div class="plan-container">
+              <img
+                src="images/icon-pro.svg"
+                alt="icon-Pro"
+              />
+              <div class="plan-txt-container">
+                <p class="plan-name">Pro</p>
+                <span id="pro-price">$15/mo</span>
+                <p class="month-free">2 month free</p>
+              </div>
+            </div>
+          </section>
+          <section class="plan-time-btn-container">
+            <p id="selected-time">Monthly</p>
+            <button
+              id="change-plan-btn"
+              class="month"
+            ></button>
+            <p>Yearly</p>
+          </section>
+        </div>
+      </div>
+      <footer>
+        <div class="btn-container">
+         <button class="back-btn" id="select-plan-back-btn">Go Back</button>
+       <button class="next-btn" id="select-plan-nxt-btn">Next Step</button>
+          
+        </div>
+      </footer>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>

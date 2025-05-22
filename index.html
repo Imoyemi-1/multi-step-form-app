@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Multi Step form</title>
+    <link
+      rel="icon"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="css/normalize.css"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+    />
+  </head>
+  <body>
+    <main>
+      <aside class="side-bar">
+        <div class="side-bar-item-container">
+          <p class="step-num step-active">1</p>
+          <div class="step">
+            <p>STEP 1</p>
+            <span>YOUR INFO</span>
+          </div>
+        </div>
+        <div class="side-bar-item-container">
+          <p class="step-num">2</p>
+          <div class="step">
+            <p>STEP 2</p>
+            <span>SELECT PLAN</span>
+          </div>
+        </div>
+        <div class="side-bar-item-container">
+          <p class="step-num">3</p>
+          <div class="step">
+            <p>STEP 3</p>
+            <span>ADDS-ONS</span>
+          </div>
+        </div>
+        <div class="side-bar-item-container">
+          <p class="step-num">4</p>
+          <div class="step">
+            <p>STEP 4</p>
+            <span>SUMMARY</span>
+          </div>
+        </div>
+      </aside>
+      <div class="section-container">
+        <div class="section-item-container">
+          <section class="header-container">
+            <h1>Personal info</h1>
+            <p>Please provide your name,email address,and phone number.</p>
+          </section>
+          <section class="main-container">
+            <form
+              action=""
+              id="form"
+            >
+              <div class="form-item-container">
+                <label for="name">Name</label>
+                <span class="name-error"></span>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="e.g.Stephen King"
+                />
+              </div>
+              <div class="form-item-container">
+                <label for="email">Email Address</label>
+                <span class="email-error"></span>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="e.g.Stephenking@lorem.com"
+                />
+              </div>
+              <div class="form-item-container">
+                <label for="number">Phone Number</label>
+                <span class="number-error"></span>
+                <input
+                  type="number"
+                  name="number"
+                  id="number"
+                  placeholder="e.g.+1 234 567 890"
+                />
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+      <footer>
+        <div class="btn-container">
+          <button
+            class="next-btn"
+            id="first-page-nxtbtn"
+          >
+            Next Step
+          </button>
+        </div>
+      </footer>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>
