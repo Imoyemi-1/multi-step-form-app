@@ -180,23 +180,29 @@ function summaryItem() {
   if (isYear === 'true') {
     document.querySelector('.select-plan-txt-container span').textContent =
       '(Yearly)';
-      document.getElementById('finishing-up-isyear').textContent = 'year'
+    document.getElementById('finishing-up-isyear').textContent = 'year';
   } else {
     document.querySelector('.select-plan-txt-container span').textContent =
       '(Monthly)';
-            document.getElementById('finishing-up-isyear').textContent = 'month'
+    document.getElementById('finishing-up-isyear').textContent = 'month';
   }
   createPickedOns();
 
   const totalPrice = [];
   let selectPlanprice = planItem.price.slice(1, -3);
 
-  totalPrice.push(+selectPlanprice)
-  const pickedPrice = document.querySelectorAll('.add-ons-txt-container .add-ons-amt')
+  totalPrice.push(+selectPlanprice);
+  const pickedPrice = document.querySelectorAll(
+    '.add-ons-txt-container .add-ons-amt'
+  );
 
-  pickedPrice.forEach(item => totalPrice.push(+item.textContent.slice(2,-3)))
-  const totalAmtPrice = totalPrice.reduce((acc,cur) => acc + cur ,0)
-  document.querySelector('.total-container-amt').textContent = `$${totalAmtPrice}/${planItem.price.slice(-2)}`
+  pickedPrice.forEach((item) =>
+    totalPrice.push(+item.textContent.slice(2, -3))
+  );
+  const totalAmtPrice = totalPrice.reduce((acc, cur) => acc + cur, 0);
+  document.querySelector(
+    '.total-container-amt'
+  ).textContent = `$${totalAmtPrice}/${planItem.price.slice(-2)}`;
 }
 
 function createPickedOns() {
@@ -215,35 +221,34 @@ function createPickedOns() {
 
 // event listener
 
-function addEventListener(){
 
-if (
-  window.location.pathname === '/index.html' ||
-  window.location.pathname === '/'
-) {
-  firstNextBtn.addEventListener('click', nextPage);
-}
+  if (
+    window.location.pathname === '/index.html' ||
+    window.location.pathname === '/'
+  ) {
+    firstNextBtn.addEventListener('click', nextPage);
+  }
 
-if (window.location.pathname === '/select-plan.html') {
-  selectPlanContainer.forEach((item) =>
-    item.addEventListener('click', selectPlan)
-  );
-  changePlanBtn.addEventListener('click', changePlan);
-  selectPlanNextBtn.addEventListener('click', nextPageAdds);
-  selectPlanBackBtn.addEventListener('click', planBackBtn);
-}
+  if (window.location.pathname === '/select-plan.html') {
+    selectPlanContainer.forEach((item) =>
+      item.addEventListener('click', selectPlan)
+    );
+    changePlanBtn.addEventListener('click', changePlan);
+    selectPlanNextBtn.addEventListener('click', nextPageAdds);
+    selectPlanBackBtn.addEventListener('click', planBackBtn);
+  }
 
-if (window.location.pathname === '/pick-add-ons.html') {
-  activeSelectYear();
-  pickAddOns.forEach((item) => item.addEventListener('click', selectAddOns));
-  pickOnsNextBtn.addEventListener('click', onNextBtn);
-  pickOnsBackBtn.addEventListener('click', onsBackBtn);
-}
+  if (window.location.pathname === '/pick-add-ons.html') {
+    activeSelectYear();
+    pickAddOns.forEach((item) => item.addEventListener('click', selectAddOns));
+    pickOnsNextBtn.addEventListener('click', onNextBtn);
+    pickOnsBackBtn.addEventListener('click', onsBackBtn);
+  }
 
-if (window.location.pathname === '/finishin-up.html') {
-  finishBackBtn.addEventListener('click', finishBackPageBtn);
-  summaryItem();
-}
-}
+  if (window.location.pathname === '/finishin-up.html') {
+    finishBackBtn.addEventListener('click', finishBackPageBtn);
+    summaryItem();
+  }
 
-addEventListener()
+
+
