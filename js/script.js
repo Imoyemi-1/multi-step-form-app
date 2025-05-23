@@ -11,8 +11,8 @@ const pickOnsNextBtn = document.getElementById('pick-ons-nxt-btn');
 const pickOnsBackBtn = document.getElementById('pick-ons-back-btn');
 const finishBackBtn = document.getElementById('finish-up-back-btn');
 
+// Validating form in first page
 function nextPage() {
-  console.log(formValidating());
   if (formValidating()) {
     window.location.href = 'select-plan.html';
   }
@@ -162,6 +162,8 @@ function onsBackBtn() {
   window.location.href = 'select-plan.html';
 }
 
+// finishing up page
+
 function finishBackPageBtn() {
   window.location.href = 'pick-add-ons.html';
 }
@@ -211,6 +213,10 @@ function createPickedOns() {
   });
 }
 
+// event listener
+
+function addEventListener(){
+
 if (
   window.location.pathname === '/index.html' ||
   window.location.pathname === '/'
@@ -238,3 +244,6 @@ if (window.location.pathname === '/finishin-up.html') {
   finishBackBtn.addEventListener('click', finishBackPageBtn);
   summaryItem();
 }
+}
+
+addEventListener()
