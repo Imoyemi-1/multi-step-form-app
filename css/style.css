@@ -194,6 +194,7 @@ input[type='text']:focus {
   font-weight: var(--md);
   visibility: hidden;
   cursor: pointer;
+  transition: color 0.2s ease;
 }
 
 #next-btn {
@@ -204,6 +205,7 @@ input[type='text']:focus {
   color: var(--White);
   font-weight: var(--md);
   cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
 /* FOR SELECT PLAN SCREEN */
@@ -225,6 +227,7 @@ input[type='text']:focus {
   box-shadow: 0 0 2px rgba(216, 216, 216, 0.6);
   cursor: pointer;
   flex: 1;
+  transition: border 0.2s ease;
 }
 
 .plan-txt-container.choose {
@@ -309,6 +312,7 @@ input[type='text']:focus {
   cursor: pointer;
   flex: 1;
   margin-bottom: 1.5rem;
+  transition: border 0.2 ease;
 }
 
 .add-ons-container:last-of-type {
@@ -380,6 +384,7 @@ input[type='checkbox'] {
   font-size: 1.4rem;
   margin-top: 0.4rem;
   cursor: pointer;
+  transition: color 0.2 ease;
 }
 
 .add-ons-chose,
@@ -419,7 +424,7 @@ input[type='checkbox'] {
   font-weight: var(--big);
 }
 
-/* FOR FINISH UP SCREEN */
+/* FOR THANK YOU SCREEN */
 
 main.thankyou {
   display: flex;
@@ -530,5 +535,24 @@ main.thankyou {
     display: grid;
     grid-template-columns: 32rem minmax(auto, 65rem);
     column-gap: 5rem;
+  }
+}
+
+@media (hover: hover) {
+  #next-btn:hover {
+    opacity: 0.8;
+  }
+
+  #back-btn:hover {
+    color: var(--Blue-950);
+  }
+
+  .plan-txt-container:hover,
+  .add-ons-container:hover {
+    border: 1px solid var(--Purple-600);
+  }
+
+  #change-plan-chose:hover {
+    color: var(--Purple-600);
   }
 }
