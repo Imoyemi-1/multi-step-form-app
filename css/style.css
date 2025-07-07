@@ -117,6 +117,8 @@ main {
   font-weight: 400;
 }
 
+/* FOR PERSONAL INFO SCREEN */
+
 .input-container {
   width: 100%;
   margin-bottom: 2rem;
@@ -150,6 +152,7 @@ input {
   border-radius: 10px;
   border: 2px solid var(--Purple-200);
   outline: none;
+  cursor: pointer;
 }
 
 input:focus {
@@ -189,7 +192,96 @@ input:focus {
   cursor: pointer;
 }
 
-@media screen and (min-width: 31rem) {
+/* FOR SELECT PLAN SCREEN */
+
+#plan-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+.plan-txt-container {
+  border: 1px solid var(--Purple-200);
+  display: flex;
+  align-items: start;
+  padding: 1.5rem;
+  gap: 1rem;
+  border-radius: 7px;
+  box-shadow: 0 0 2px rgba(216, 216, 216, 0.6);
+  cursor: pointer;
+}
+
+.plan-txt-container.choose {
+  border: 1px solid var(--Purple-600);
+  background-color: var(--Blue-50);
+}
+
+.plan-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.plan-name {
+  color: var(--Blue-950);
+  font-weight: var(--big);
+}
+
+.plan-amt {
+  color: var(--Grey-500);
+}
+
+.plan-year {
+  color: var(--Blue-950);
+  font-weight: var(--md);
+  font-size: 1.4rem;
+}
+
+#mon-year-container {
+  background-color: var(--Blue-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem;
+  border-radius: 7px;
+  box-shadow: 0 0 2px var(--Blue-50);
+}
+
+.time {
+  color: var(--Grey-500);
+  font-weight: var(--md);
+}
+
+.time.picked {
+  color: var(--Blue-950);
+}
+
+.toggle {
+  padding: 0.9rem 1.7rem;
+  background-color: var(--Blue-950);
+  border-radius: 1rem;
+  position: relative;
+  margin: 0 2.5rem;
+  cursor: pointer;
+}
+
+.toggle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  transform: translateY(-50%);
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: var(--White);
+  transition: all 0.3s ease;
+}
+
+/* RESPONSIVENESS MEDIA QUERIES*/
+
+@media screen and (min-width: 31.26rem) {
   .container {
     display: grid;
     grid-template-columns: 28rem minmax(auto, 70rem);
@@ -221,7 +313,7 @@ input:focus {
   .step-txt-container .step-num {
     color: var(--Grey-500);
     font-size: 1.4rem;
-    margin-button: 1px;
+    margin-bottom: 1px;
   }
 
   .step-txt-container .step-txt {
