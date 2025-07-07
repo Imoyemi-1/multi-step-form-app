@@ -159,7 +159,7 @@ main {
   display: none;
 }
 
-input {
+input[type='text'] {
   width: 100%;
   padding: 1.5rem;
   border-radius: 10px;
@@ -168,7 +168,7 @@ input {
   cursor: pointer;
 }
 
-input:focus {
+input[type='text']:focus {
   border-color: var(--Purple-600);
 }
 
@@ -294,6 +294,60 @@ input:focus {
   border-radius: 50%;
   background-color: var(--White);
   transition: all 0.3s ease;
+}
+
+/* FOR SELECT PLAN SCREEN */
+
+.add-ons-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--Purple-200);
+  padding: 1.5rem;
+  border-radius: 7px;
+  box-shadow: 0 0 2px rgba(216, 216, 216, 0.6);
+  cursor: pointer;
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.add-ons-container:last-of-type {
+  margin-bottom: 0;
+}
+
+.add-ons-container.checked {
+  border: 1px solid var(--Purple-600);
+  background-color: var(--Blue-50);
+}
+
+.add-ons-txt-container {
+  display: flex;
+  gap: 2rem;
+}
+
+input[type='checkbox'] {
+  width: 1.8rem;
+  cursor: pointer;
+}
+
+.add-ons-txt {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.add-ons-name {
+  font-weight: var(--md);
+  color: var(--Blue-950);
+  font-size: 1.8rem;
+}
+
+.add-ons-details {
+  color: var(--Grey-500);
+}
+
+.add-ons-price {
+  color: var(--Purple-600);
 }
 
 /* RESPONSIVENESS MEDIA QUERIES*/
