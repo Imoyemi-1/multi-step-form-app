@@ -43,14 +43,15 @@ body {
 #sidebar {
   background-image: url(../images/bg-sidebar-mobile.svg);
   background-repeat: no-repeat;
-  background-position: center;
+
   background-size: cover;
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   padding: 4rem 1rem;
   width: 100%;
-  min-height: 22rem;
+  min-height: 20.8rem;
+  height: 20vh;
 }
 
 #sidebar > .sidebar-content-container {
@@ -68,11 +69,85 @@ body {
 }
 
 .step-counter.active {
-  background-color: var(--Blue-300);
+  background-color: var(--Blue-200);
   border: none;
   color: var(--Blue-950);
 }
 
 .step-txt-container {
   display: none;
+}
+
+main {
+  background-color: var(--Blue-100);
+  min-height: 30rem;
+  position: relative;
+  height: 60vh;
+}
+
+.screen {
+  display: none;
+  background-color: var(--White);
+  position: absolute;
+  width: 90%;
+  top: -7.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3.5rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgb(216, 216, 216);
+}
+
+.screen.active {
+  display: block;
+}
+
+.header {
+  color: var(--Blue-950);
+  margin-bottom: 1rem;
+}
+
+.header-txt {
+  color: var(--Grey-500);
+  line-height: 1.4;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.input-container {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.input-container:last-of-type {
+  margin-bottom: 0;
+}
+
+.label-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  font-weight: var(--md);
+}
+
+.label-container label {
+  color: var(--Blue-950);
+  font-size: 1.4rem;
+}
+
+.label-container .error {
+  color: var(--Red-500);
+}
+
+input {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 7px;
+  border: 2px solid var(--Purple-200);
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--Purple-600);
 }
