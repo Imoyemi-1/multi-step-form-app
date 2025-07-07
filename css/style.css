@@ -40,6 +40,16 @@ body {
   font-size: 1.6rem;
 }
 
+::-webkit-scrollbar {
+  background-color: black;
+  max-width: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  margin: 0 5px;
+  border: 50%;
+  background-color: rgb(172, 166, 166);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -107,13 +117,15 @@ main {
 
 .header {
   color: var(--Blue-950);
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
+  font-weight: var(--big);
+  font-size: 3rem;
 }
 
 .header-txt {
   color: var(--Grey-500);
   line-height: 1.4;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   font-weight: 400;
 }
 
@@ -198,7 +210,7 @@ input:focus {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
 }
 
 .plan-txt-container {
@@ -210,6 +222,7 @@ input:focus {
   border-radius: 7px;
   box-shadow: 0 0 2px rgba(216, 216, 216, 0.6);
   cursor: pointer;
+  flex: 1;
 }
 
 .plan-txt-container.choose {
@@ -236,6 +249,7 @@ input:focus {
   color: var(--Blue-950);
   font-weight: var(--md);
   font-size: 1.4rem;
+  text-wrap: nowrap;
 }
 
 #mon-year-container {
@@ -281,10 +295,10 @@ input:focus {
 
 /* RESPONSIVENESS MEDIA QUERIES*/
 
-@media screen and (min-width: 31.26rem) {
+@media screen and (min-width: 49rem) {
   .container {
     display: grid;
-    grid-template-columns: 28rem minmax(auto, 70rem);
+    grid-template-columns: 28rem minmax(auto, 65rem);
     grid-template-rows: 1fr auto;
     padding: 1rem;
     column-gap: 2rem;
@@ -331,5 +345,25 @@ input:focus {
     padding: 3.5rem 2.5rem;
     border-radius: 0px;
     box-shadow: none;
+  }
+
+  .btn-content-con {
+    padding: 0 2.5rem;
+  }
+
+  /* FOR SELECT PLAN SCREEN */
+
+  #plan-container {
+    flex-direction: row;
+    gap: 2.5rem;
+  }
+
+  .plan-txt-container {
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+  .plan-year {
+    display: none;
   }
 }
