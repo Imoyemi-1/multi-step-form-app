@@ -418,6 +418,37 @@ input[type='checkbox'] {
   color: var(--Purple-600);
   font-weight: var(--big);
 }
+
+/* FOR FINISH UP SCREEN */
+
+main.thankyou {
+  display: flex;
+  align-items: center;
+}
+
+#thankyou-screen {
+  padding: 4.8rem 3rem;
+}
+
+#thankyou-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#thankyou-container img {
+  margin-bottom: 3rem;
+}
+
+#thankyou-txt {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--Grey-500);
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
 /* RESPONSIVENESS MEDIA QUERIES*/
 
 @media screen and (min-width: 48rem) {
