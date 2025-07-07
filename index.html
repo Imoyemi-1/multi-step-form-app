@@ -41,7 +41,7 @@
         </div>
       </aside>
       <main>
-        <section class="screen active">
+        <section class="screen">
           <h2 class="header">Personal info</h2>
           <p class="header-txt">
             Please provide your name, email address, and phone number.
@@ -72,7 +72,43 @@
             <input type="text" id="number" placeholder="e.g. +1 234 567 890" />
           </div>
         </section>
-        <section class="screen"></section>
+        <section class="screen active">
+          <h2 class="header">Select your plan</h2>
+          <p class="header-txt">
+            You have the option of monthly or yearly billing.
+          </p>
+          <div id="plan-container">
+            <div class="plan-txt-container choose">
+              <img src="./images/icon-arcade.svg" alt="icon-arcade" />
+              <div class="plan-txt">
+                <p class="plan-name">Arcade</p>
+                <p class="plan-amt">$90/yr</p>
+                <p class="plan-year">2 months free</p>
+              </div>
+            </div>
+            <div class="plan-txt-container">
+              <img src="./images/icon-advanced.svg" alt="icon-advanced" />
+              <div class="plan-txt">
+                <p class="plan-name">Advanced</p>
+                <p class="plan-amt">$120/yr</p>
+                <p class="plan-year">2 months free</p>
+              </div>
+            </div>
+            <div class="plan-txt-container">
+              <img src="./images/icon-pro.svg" alt="icon-pro" />
+              <div class="plan-txt">
+                <p class="plan-name">Pro</p>
+                <p class="plan-amt">$150/yr</p>
+                <p class="plan-year">2 months free</p>
+              </div>
+            </div>
+          </div>
+          <div id="mon-year-container">
+            <p class="time picked">Monthly</p>
+            <div class="toggle"></div>
+            <p class="time">Yearly</p>
+          </div>
+        </section>
         <section class="screen"></section>
         <section class="screen"></section>
         <section class="screen"></section>
