@@ -40,18 +40,23 @@ body {
   font-size: 1.6rem;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
 #sidebar {
   background-image: url(../images/bg-sidebar-mobile.svg);
   background-repeat: no-repeat;
-
   background-size: cover;
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   padding: 4rem 1rem;
   width: 100%;
-  min-height: 20.8rem;
-  height: 20vh;
+  min-height: 20.375rem;
 }
 
 #sidebar > .sidebar-content-container {
@@ -80,15 +85,13 @@ body {
 
 main {
   background-color: var(--Blue-100);
-  min-height: 30rem;
-  position: relative;
-  height: 60vh;
+  flex: 1;
 }
 
 .screen {
   display: none;
   background-color: var(--White);
-  position: absolute;
+  position: relative;
   width: 90%;
   top: -7.5rem;
   left: 50%;
@@ -138,16 +141,50 @@ main {
 
 .label-container .error {
   color: var(--Red-500);
+  display: none;
 }
 
 input {
   width: 100%;
   padding: 1.5rem;
-  border-radius: 7px;
+  border-radius: 10px;
   border: 2px solid var(--Purple-200);
   outline: none;
 }
 
 input:focus {
   border-color: var(--Purple-600);
+}
+
+#btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.btn-content-con {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#back-btn {
+  border: none;
+  background: none;
+  color: var(--Grey-500);
+  font-weight: var(--md);
+  visibility: hidden;
+  cursor: pointer;
+}
+
+#next-btn {
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--Blue-950);
+  color: var(--White);
+  font-weight: var(--md);
+  cursor: pointer;
 }
