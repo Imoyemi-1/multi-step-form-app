@@ -41,7 +41,7 @@
         </div>
       </aside>
       <main>
-        <section class="screen">
+        <section class="screen active" id="info-screen">
           <h2 class="header">Personal info</h2>
           <p class="header-txt">
             Please provide your name, email address, and phone number.
@@ -72,9 +72,11 @@
             <input type="text" id="number" placeholder="e.g. +1 234 567 890" />
           </div>
         </section>
-        <section class="screen">
+        <section class="screen" id="select-plan-screen">
           <h2 class="header">Select your plan</h2>
-          <p class="header-txt"></p>
+          <p class="header-txt">
+            You have the option of monthly or yearly billing.
+          </p>
           <div id="plan-container">
             <div class="plan-txt-container choose">
               <img src="./images/icon-arcade.svg" alt="icon-arcade" />
@@ -107,7 +109,9 @@
             <p class="time">Yearly</p>
           </div>
         </section>
-        <section class="screen">
+        <section class="screen" id="add-ons-screen">
+          <h2 class="header">Pick add-ons</h2>
+          <p class="header-txt">Add-ons help enhance your gaming experience</p>
           <div class="add-ons-container">
             <div class="add-ons-txt-container">
               <input type="checkbox" name="online" id="online" />
@@ -120,7 +124,7 @@
           </div>
           <div class="add-ons-container">
             <div class="add-ons-txt-container">
-              <input type="checkbox" name="online" id="online" />
+              <input type="checkbox" name="storage" id="storage" />
               <div class="add-ons-txt">
                 <p class="add-ons-name">Larger storage</p>
                 <p class="add-ons-details">Extra 1TB of cloud save</p>
@@ -130,7 +134,7 @@
           </div>
           <div class="add-ons-container">
             <div class="add-ons-txt-container">
-              <input type="checkbox" name="online" id="online" />
+              <input type="checkbox" name="profile" id="profile" />
               <div class="add-ons-txt">
                 <p class="add-ons-name">Customizable profile</p>
                 <p class="add-ons-details">Custom theme on your profile</p>
@@ -139,7 +143,7 @@
             <p class="add-ons-price">+$2/mo</p>
           </div>
         </section>
-        <section class="screen active">
+        <section class="screen" id="finishup-screen">
           <h2 class="header">Finishing up</h2>
           <p class="header-txt">
             Double-check everything looks OK before confirming.
@@ -174,7 +178,17 @@
             <p id="total-price">$120/yr</p>
           </div>
         </section>
-        <section class="screen"></section>
+        <section class="screen" id="thankyou-screen">
+          <div id="thankyou-container">
+            <img src="./images/icon-thank-you.svg" alt="icon-thank-you" />
+            <h2 class="header">Thank you!</h2>
+            <p id="thankyou-txt">
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free to
+              email us at support@loremgaming.com.
+            </p>
+          </div>
+        </section>
       </main>
       <div id="btn-container">
         <div class="btn-content-con">
