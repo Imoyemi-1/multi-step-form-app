@@ -103,6 +103,7 @@ main {
   background-color: var(--White);
   position: relative;
   width: 90%;
+  max-width: 50rem;
   top: -7.5rem;
   left: 50%;
   transform: translateX(-50%);
@@ -180,6 +181,7 @@ input:focus {
 
 .btn-content-con {
   width: 90%;
+  max-width: 50rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -250,6 +252,7 @@ input:focus {
   font-weight: var(--md);
   font-size: 1.4rem;
   text-wrap: nowrap;
+  display: none;
 }
 
 #mon-year-container {
@@ -257,7 +260,7 @@ input:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.2rem;
+  padding: 1.5rem;
   border-radius: 7px;
   box-shadow: 0 0 2px var(--Blue-50);
 }
@@ -364,16 +367,15 @@ input:focus {
     flex-direction: column;
     gap: 6rem;
   }
-
-  .plan-year {
-    display: none;
-  }
 }
 
 @media screen and (min-width: 54rem) {
+  html {
+    font-size: 65%;
+  }
   .container {
     display: grid;
-    grid-template-columns: 32rem minmax(auto, 60rem);
+    grid-template-columns: 32rem minmax(auto, 65rem);
     column-gap: 5rem;
   }
 }
