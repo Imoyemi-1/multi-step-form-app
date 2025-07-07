@@ -350,6 +350,74 @@ input[type='checkbox'] {
   color: var(--Purple-600);
 }
 
+/* FOR FINISH UP SCREEN */
+
+#calculate-container {
+  background-color: var(--Blue-50);
+  padding: 1.5rem;
+  border-radius: 7px;
+  box-shadow: 0 0 2px var(--Blue-100);
+}
+
+#plan-chose {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--Purple-200);
+  padding-bottom: 2rem;
+}
+
+#plan-chose-name,
+#plan-chose-price {
+  font-weight: var(--big);
+  color: var(--Blue-950);
+}
+
+#change-plan-chose {
+  font-weight: 400;
+  color: var(--Grey-500);
+  text-decoration: underline;
+  font-size: 1.4rem;
+  margin-top: 0.4rem;
+  cursor: pointer;
+}
+
+.add-ons-chose,
+#total-container {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.add-ons-chose.checked {
+  display: flex;
+}
+
+.add-ons-chose-name {
+  color: var(--Grey-500);
+  font-weight: 400;
+}
+
+.add-ons-chose-price {
+  color: var(--Blue-950);
+  font-weight: var(--sm);
+}
+
+#total-container {
+  padding: 0 1.5rem;
+  color: var(--Grey-500);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+#total-price {
+  color: var(--Purple-600);
+  font-weight: var(--big);
+}
 /* RESPONSIVENESS MEDIA QUERIES*/
 
 @media screen and (min-width: 48rem) {
