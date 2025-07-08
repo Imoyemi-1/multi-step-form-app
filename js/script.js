@@ -256,3 +256,13 @@ backBtn.addEventListener('click', () => {
       break;
   }
 });
+
+document.querySelectorAll('input.formvalidate').forEach((input) => {
+  input.addEventListener('blur', () => {
+    if (input.value.length > 0) {
+      if (input.type === 'text') handleNameInput();
+      else if (input.type === 'email') handleEmailInput();
+      else handleNumberInput();
+    }
+  });
+});
