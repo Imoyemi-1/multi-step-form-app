@@ -271,6 +271,7 @@ input[type='number']::-webkit-outer-spin-button {
   font-size: 1.4rem;
   text-wrap: nowrap;
   display: none;
+  transition: display 0.2s ease;
 }
 
 #mon-year-container {
@@ -305,13 +306,17 @@ input[type='number']::-webkit-outer-spin-button {
   content: '';
   position: absolute;
   top: 50%;
-  left: 2px;
+  left: 0.2rem;
   transform: translateY(-50%);
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
   background-color: var(--White);
-  transition: all 0.3s ease;
+  transition: left 0.3s ease;
+}
+
+.toggle.year::before {
+  left: 2rem;
 }
 
 /* FOR SELECT PLAN SCREEN */
