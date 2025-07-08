@@ -49,27 +49,38 @@
           <div class="input-container">
             <div class="label-container">
               <label for="name">Name</label>
-              <small class="error">This field is required</small>
+              <small class="error"></small>
             </div>
-            <input type="text" id="name" placeholder="e.g. Stephen King" />
+            <input
+              type="text"
+              id="name"
+              class="formvalidate"
+              placeholder="e.g. Stephen King"
+            />
           </div>
           <div class="input-container">
             <div class="label-container">
               <label for="email">Email Address</label>
-              <small class="error">This field is required</small>
+              <small class="error"></small>
             </div>
             <input
-              type="text"
+              type="email"
               id="email"
+              class="formvalidate"
               placeholder="e.g. stephenking@lorem.com"
             />
           </div>
           <div class="input-container">
             <div class="label-container">
               <label for="number">Phone Number</label>
-              <small class="error">This field is required</small>
+              <small class="error"></small>
             </div>
-            <input type="text" id="number" placeholder="e.g. +1 234 567 890" />
+            <input
+              type="number"
+              id="number"
+              class="formvalidate"
+              placeholder="e.g. +1 234 567 890"
+            />
           </div>
         </section>
         <section class="screen" id="select-plan-screen">
@@ -197,5 +208,6 @@
         </div>
       </div>
     </div>
+    <script src="./js/script.js"></script>
   </body>
 </html>
