@@ -15,6 +15,7 @@ const numberInput = document.querySelector('input#number');
 const stepCounter = document.querySelectorAll('.step-counter');
 const planItems = document.querySelectorAll('.plan-txt-container');
 const toggleYearBtn = document.querySelector('.toggle');
+const addonsItems = document.querySelectorAll('.add-ons-container');
 
 let page = 'info';
 const emailRegExp = /^[\w.!#$%&'*+/=?^`{|}~-]+@[a-z\d-]+(?:\.[a-z\d-]+)*$/i;
@@ -96,6 +97,27 @@ const changePlan = (e) => {
   e.currentTarget.classList.add('choose');
 };
 
+// select add on
+
+const checkedCheckbox = () => {
+  const checkBoxCons = document.querySelectorAll('.checked');
+  if (checkBoxCons) {
+    checkBoxCons.forEach(
+      (item) =>
+        // eslint-disable-next-line prettier/prettier
+        (item.querySelector(`input[type='checkbox']`).checked = true)
+    );
+  }
+};
+
+const selectAddons = (e) => {
+  e.currentTarget.classList.toggle('checked');
+  checkedCheckbox();
+  if (e.currentTarget.classList.contains('checked'))
+    e.currentTarget.querySelector('input[type="checkbox"]').checked = true;
+  else e.currentTarget.querySelector('input[type="checkbox"]').checked = false;
+};
+
 // user to choose between month and year
 
 const toggleYearPlan = () => {
@@ -155,6 +177,7 @@ const moveToSelectPlan = () => {
     stepCounter.forEach((element) => element.classList.remove('active'));
     stepCounter[1].classList.add('active');
     backBtn.style.visibility = 'visible';
+    nextBtn.textContent = 'Next Step';
   } else {
     handleEmailInput();
     handleNameInput();
@@ -169,6 +192,8 @@ const moveToAddons = () => {
   page = 'addons';
   stepCounter.forEach((element) => element.classList.remove('active'));
   stepCounter[2].classList.add('active');
+  checkedCheckbox();
+  nextBtn.textContent = 'Next Step';
 };
 
 const moveToFinishup = () => {
@@ -177,6 +202,7 @@ const moveToFinishup = () => {
   page = 'finish';
   stepCounter.forEach((element) => element.classList.remove('active'));
   stepCounter[3].classList.add('active');
+  nextBtn.textContent = 'Confirm';
 };
 
 const moveToThankPage = () => {
@@ -191,6 +217,7 @@ const moveToThankPage = () => {
 // eventlistener for moving between pages
 
 planItems.forEach((el) => el.addEventListener('click', changePlan));
+addonsItems.forEach((el) => el.addEventListener('click', selectAddons));
 toggleYearBtn.addEventListener('click', toggleYearPlan);
 
 nextBtn.addEventListener('click', () => {
