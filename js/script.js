@@ -11,6 +11,7 @@ const nameInput = document.querySelector('input#name');
 const emailInput = document.querySelector('input#email');
 const numberInput = document.querySelector('input#number');
 const stepCounter = document.querySelectorAll('.step-counter');
+const planItems = document.querySelectorAll('.plan-txt-container');
 
 let page = 'info';
 const emailRegExp = /^[\w.!#$%&'*+/=?^`{|}~-]+@[a-z\d-]+(?:\.[a-z\d-]+)*$/i;
@@ -84,6 +85,14 @@ const handleInput = () => {
 
   return valid;
 };
+
+// choose  plan
+
+const changePlan = (e) => {
+  planItems.forEach((item) => item.classList.remove('choose'));
+  e.currentTarget.classList.add('choose');
+};
+
 // moving between page
 
 const moveToInfo = () => {
@@ -138,6 +147,9 @@ const moveToThankPage = () => {
 };
 
 // eventlistener for moving between pages
+
+planItems.forEach((el) => el.addEventListener('click', changePlan));
+
 nextBtn.addEventListener('click', () => {
   switch (page) {
     case 'info':
