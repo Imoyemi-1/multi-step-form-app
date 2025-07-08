@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-return-assign */
 // GLOBAL VARIABLE
 
 const infoPage = document.getElementById('info-screen');
@@ -12,6 +14,7 @@ const emailInput = document.querySelector('input#email');
 const numberInput = document.querySelector('input#number');
 const stepCounter = document.querySelectorAll('.step-counter');
 const planItems = document.querySelectorAll('.plan-txt-container');
+const toggleYearBtn = document.querySelector('.toggle');
 
 let page = 'info';
 const emailRegExp = /^[\w.!#$%&'*+/=?^`{|}~-]+@[a-z\d-]+(?:\.[a-z\d-]+)*$/i;
@@ -93,6 +96,45 @@ const changePlan = (e) => {
   e.currentTarget.classList.add('choose');
 };
 
+// user to choose between month and year
+
+const toggleYearPlan = () => {
+  const planYear = document.querySelectorAll('.plan-year');
+  const planPrice = document.querySelectorAll('.plan-amt');
+  const addOnsPrice = document.querySelectorAll('.add-ons-price');
+  const planChoseNameTime = document.getElementById('plan-chose-name-time');
+  const totalTimeSel = document.getElementById('total-time-sel');
+  const monthly = document.getElementById('monthly');
+  const yearly = document.getElementById('yearly');
+
+  toggleYearBtn.classList.toggle('year');
+  if (toggleYearBtn.classList.contains('year')) {
+    planYear.forEach((el) => (el.style.display = 'block'));
+    planPrice[0].textContent = '$90/yr';
+    planPrice[1].textContent = '$120/yr';
+    planPrice[2].textContent = '$150/yr';
+    addOnsPrice[0].textContent = '$10/yr';
+    addOnsPrice[1].textContent = '$20/yr';
+    addOnsPrice[2].textContent = '$20/yr';
+    planChoseNameTime.textContent = 'Yearly';
+    totalTimeSel.textContent = 'year';
+    monthly.classList.remove('picked');
+    yearly.classList.add('picked');
+  } else {
+    planYear.forEach((el) => (el.style.display = 'none'));
+    planPrice[0].textContent = '$9/mo';
+    planPrice[1].textContent = '$12/mo';
+    planPrice[2].textContent = '$15/mo';
+    addOnsPrice[0].textContent = '$1/mo';
+    addOnsPrice[1].textContent = '$2/mo';
+    addOnsPrice[2].textContent = '$2/mo';
+    planChoseNameTime.textContent = 'Monthly';
+    totalTimeSel.textContent = 'month';
+    yearly.classList.remove('picked');
+    monthly.classList.add('picked');
+  }
+};
+
 // moving between page
 
 const moveToInfo = () => {
@@ -149,6 +191,7 @@ const moveToThankPage = () => {
 // eventlistener for moving between pages
 
 planItems.forEach((el) => el.addEventListener('click', changePlan));
+toggleYearBtn.addEventListener('click', toggleYearPlan);
 
 nextBtn.addEventListener('click', () => {
   switch (page) {
