@@ -172,6 +172,16 @@ input[type='text']:focus {
   border-color: var(--Purple-600);
 }
 
+input[type='text'].invalid {
+  border: 2px solid var(--Red-500);
+  background-color: #fdd;
+}
+
+input[type='text']:focus.invalid {
+  outline: none;
+  border-style: dashed;
+}
+
 #btn-container {
   width: 100%;
   display: flex;
