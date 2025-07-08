@@ -156,10 +156,9 @@ main {
 
 .label-container .error {
   color: var(--Red-500);
-  display: none;
 }
 
-input[type='text'] {
+input.formvalidate {
   width: 100%;
   padding: 1.5rem;
   border-radius: 10px;
@@ -168,18 +167,24 @@ input[type='text'] {
   cursor: pointer;
 }
 
-input[type='text']:focus {
+input.formvalidate:focus {
   border-color: var(--Purple-600);
 }
 
-input[type='text'].invalid {
+input.formvalidate.invalid {
   border: 2px solid var(--Red-500);
   background-color: #fdd;
 }
 
-input[type='text']:focus.invalid {
+input.formvalidate:focus.invalid {
   outline: none;
   border-style: dashed;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 #btn-container {
