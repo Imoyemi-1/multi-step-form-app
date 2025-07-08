@@ -16,6 +16,7 @@ const stepCounter = document.querySelectorAll('.step-counter');
 const planItems = document.querySelectorAll('.plan-txt-container');
 const toggleYearBtn = document.querySelector('.toggle');
 const addonsItems = document.querySelectorAll('.add-ons-container');
+const changePlanChoose = document.getElementById('change-plan-chose');
 
 let page = 'info';
 const emailRegExp = /^[\w.!#$%&'*+/=?^`{|}~-]+@[a-z\d-]+(?:\.[a-z\d-]+)*$/i;
@@ -172,12 +173,14 @@ const moveToSelectPlan = () => {
   if (handleInput()) {
     infoPage.classList.remove('active');
     addOnsPage.classList.remove('active');
+    finishupPage.classList.remove('active');
     selectPlanPage.classList.add('active');
     page = 'plan';
     stepCounter.forEach((element) => element.classList.remove('active'));
     stepCounter[1].classList.add('active');
     backBtn.style.visibility = 'visible';
     nextBtn.textContent = 'Next Step';
+    nextBtn.style.backgroundColor = 'var(--Blue-950)';
   } else {
     handleEmailInput();
     handleNameInput();
@@ -194,6 +197,7 @@ const moveToAddons = () => {
   stepCounter[2].classList.add('active');
   checkedCheckbox();
   nextBtn.textContent = 'Next Step';
+  nextBtn.style.backgroundColor = 'var(--Blue-950)';
 };
 
 const moveToFinishup = () => {
@@ -203,6 +207,7 @@ const moveToFinishup = () => {
   stepCounter.forEach((element) => element.classList.remove('active'));
   stepCounter[3].classList.add('active');
   nextBtn.textContent = 'Confirm';
+  nextBtn.style.backgroundColor = 'var(--Purple-600)';
 };
 
 const moveToThankPage = () => {
@@ -219,6 +224,7 @@ const moveToThankPage = () => {
 planItems.forEach((el) => el.addEventListener('click', changePlan));
 addonsItems.forEach((el) => el.addEventListener('click', selectAddons));
 toggleYearBtn.addEventListener('click', toggleYearPlan);
+changePlanChoose.addEventListener('click', moveToSelectPlan);
 
 nextBtn.addEventListener('click', () => {
   switch (page) {
