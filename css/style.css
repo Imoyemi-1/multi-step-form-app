@@ -409,14 +409,10 @@ input[type='checkbox'] {
 
 .add-ons-chose,
 #total-container {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 1.5rem;
-}
-
-.add-ons-chose.checked {
-  display: flex;
 }
 
 .add-ons-chose-name {
