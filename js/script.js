@@ -119,6 +119,19 @@ const selectAddons = (e) => {
   else e.currentTarget.querySelector('input[type="checkbox"]').checked = false;
 };
 
+// add selected plan and add ons to finish up page
+
+const displaySelectedPlan = () => {
+  const selectedPlan = document.querySelector('.choose');
+  const selectPlanName = selectedPlan.querySelector('.plan-txt .plan-name');
+  const selectPlanPrice = selectedPlan.querySelector('.plan-txt .plan-amt');
+  const finishPlanName = document.querySelector('#plan-chose-name-txt');
+  const finishPlanPrice = document.querySelector('#plan-chose-price');
+
+  finishPlanName.textContent = selectPlanName.textContent;
+  finishPlanPrice.textContent = selectPlanPrice.textContent;
+};
+
 // user to choose between month and year
 
 const toggleYearPlan = () => {
@@ -208,6 +221,7 @@ const moveToFinishup = () => {
   stepCounter[3].classList.add('active');
   nextBtn.textContent = 'Confirm';
   nextBtn.style.backgroundColor = 'var(--Purple-600)';
+  displaySelectedPlan();
 };
 
 const moveToThankPage = () => {
