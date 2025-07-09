@@ -17,8 +17,6 @@ const planItems = document.querySelectorAll('.plan-txt-container');
 const toggleYearBtn = document.querySelector('.toggle');
 const addonsItems = document.querySelectorAll('.add-ons-container');
 const changePlanChoose = document.getElementById('change-plan-chose');
-const selectedAddons = document.querySelectorAll('.checked');
-const selectedPlan = document.querySelector('.choose');
 
 let page = 'info';
 const emailRegExp = /^[\w.!#$%&'*+/=?^`{|}~-]+@[a-z\d-]+(?:\.[a-z\d-]+)*$/i;
@@ -124,6 +122,7 @@ const selectAddons = (e) => {
 // add selected plan and add ons to finish up page
 
 const displaySelectedPlan = () => {
+  const selectedPlan = document.querySelector('.choose');
   const selectPlanName = selectedPlan.querySelector('.plan-txt .plan-name');
   const selectPlanPrice = selectedPlan.querySelector('.plan-txt .plan-amt');
   const finishPlanName = document.querySelector('#plan-chose-name-txt');
@@ -136,6 +135,7 @@ const displaySelectedPlan = () => {
 // add chose add ons to finish up page
 
 const displaySelectedAddons = () => {
+  const selectedAddons = document.querySelectorAll('.checked');
   const choseAddonsEl = document.getElementById('add-ons-chose');
 
   if (selectedAddons) {
@@ -150,6 +150,22 @@ const displaySelectedAddons = () => {
   }
 };
 
+// calculate addons and plan price together
+
+const totalPrice = () => {
+  const selectedPlan = document.querySelector('.choose');
+  const selectedAddons = document.querySelectorAll('.checked');
+  const price = selectedPlan.querySelector('.plan-amt').textContent;
+  const totalPriceNum = document.querySelector('#total-price-num');
+
+  const mapPrice = [...selectedAddons].map((item) => {
+    return +item.querySelector('.add-ons-price').textContent.slice(2, -3);
+  });
+  const total = mapPrice.reduce((acc, cur) => acc + cur, +price.slice(1, -3));
+
+  totalPriceNum.textContent = total;
+};
+
 // user to choose between month and year
 
 const toggleYearPlan = () => {
@@ -160,7 +176,7 @@ const toggleYearPlan = () => {
   const totalTimeSel = document.getElementById('total-time-sel');
   const monthly = document.getElementById('monthly');
   const yearly = document.getElementById('yearly');
-  const totalPrice = document.getElementById('total-price-txt');
+  const totalPriceEL = document.getElementById('total-price-txt');
 
   toggleYearBtn.classList.toggle('year');
   if (toggleYearBtn.classList.contains('year')) {
@@ -175,7 +191,7 @@ const toggleYearPlan = () => {
     totalTimeSel.textContent = 'year';
     monthly.classList.remove('picked');
     yearly.classList.add('picked');
-    totalPrice.textContent = 'yr';
+    totalPriceEL.textContent = 'yr';
   } else {
     planYear.forEach((el) => (el.style.display = 'none'));
     planPrice[0].textContent = '$9/mo';
@@ -188,7 +204,7 @@ const toggleYearPlan = () => {
     totalTimeSel.textContent = 'month';
     yearly.classList.remove('picked');
     monthly.classList.add('picked');
-    totalPrice.textContent = 'mo';
+    totalPriceEL.textContent = 'mo';
   }
 };
 
@@ -244,6 +260,7 @@ const moveToFinishup = () => {
   nextBtn.style.backgroundColor = 'var(--Purple-600)';
   displaySelectedPlan();
   displaySelectedAddons();
+  totalPrice();
 };
 
 const moveToThankPage = () => {
