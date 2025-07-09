@@ -38,6 +38,7 @@ html {
 
 body {
   font-size: 1.6rem;
+  min-height: 100vh;
 }
 
 ::-webkit-scrollbar {
@@ -53,7 +54,6 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -472,13 +472,26 @@ main.thankyou {
 
 /* RESPONSIVENESS MEDIA QUERIES*/
 
-@media screen and (min-width: 48rem) {
+@media screen and (min-width: 44rem) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Blue-100);
+    padding: 1rem;
+  }
+
   .container {
     display: grid;
-    grid-template-columns: 28rem minmax(auto, 65rem);
+    max-width: 90rem;
+    width: 100%;
+    min-height: 50rem;
+    grid-template-columns: minmax(22rem, 25rem) 1fr;
     grid-template-rows: 1fr auto;
     padding: 1rem;
-    column-gap: 2rem;
+    background-color: var(--White);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(216, 216, 216, 0.6);
   }
 
   #sidebar {
@@ -488,7 +501,7 @@ main.thankyou {
     flex-direction: column;
     justify-content: start;
     padding: 3.5rem;
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   #sidebar > .sidebar-content-container {
@@ -510,6 +523,7 @@ main.thankyou {
   .step-txt-container .step-txt {
     color: var(--White);
     margin-top: 1px;
+    font-size: 1.6rem;
   }
 
   main {
@@ -540,17 +554,6 @@ main.thankyou {
   .plan-txt-container {
     flex-direction: column;
     gap: 6rem;
-  }
-}
-
-@media screen and (min-width: 54rem) {
-  html {
-    font-size: 65%;
-  }
-  .container {
-    display: grid;
-    grid-template-columns: 32rem minmax(auto, 65rem);
-    column-gap: 5rem;
   }
 }
 
