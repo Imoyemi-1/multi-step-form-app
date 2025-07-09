@@ -54,7 +54,7 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 #sidebar {
@@ -471,6 +471,12 @@ main.thankyou {
 }
 
 /* RESPONSIVENESS MEDIA QUERIES*/
+
+@media screen and (max-width: 43.99rem) {
+  .container {
+    min-height: 100vh;
+  }
+}
 
 @media screen and (min-width: 44rem) {
   body {
